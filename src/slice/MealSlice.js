@@ -11,10 +11,11 @@ export const MealSlice = createSlice({
   ],
   reducers: {
     toggleMealSelection: (state, action) => {
-    },
+      state[action.payload].selected = !state[action.payload].selected;
+},toggleEverythingoff:(state)=>{state.forEach(item=>item.selected=false)}
   },
 });
 
-export const { toggleMealSelection } = MealSlice.actions;
+export const { toggleMealSelection,toggleEverythingoff } = MealSlice.actions;
 
 export default MealSlice.reducer;
