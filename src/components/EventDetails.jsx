@@ -14,13 +14,7 @@ const EventDetails = () => {
     const addonItems = useSelector((state) => state.addon);
     const mealItems = useSelector((state) => state.meals)
     const dispatch = useDispatch();
-    const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
-
-
-    const handleToggleItems = () => {
-        console.log("handleToggleItems called");
-        setShowItems(!showItems);
-    };
+    const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "LAN Battle Zone (Capacity:200)").quantity;
 
     const handleAddToCart = (index) => {
         if (venueItems[index].name === "Auditorium Hall (Capacity:200)" && venueItems[index].quantity >= 3) {
@@ -194,7 +188,7 @@ const EventDetails = () => {
                                             <div className="text">{item.name}</div>
                                             <div>${item.cost}</div>
                                             <div className="button_container">
-                                                {venueItems[index].name === "Auditorium Hall (Capacity:200)" ? (
+                                                {venueItems[index].name === "LAN Battle Zone (Capacity:200)" ? (
 
                                                     <>
                                                         <button
