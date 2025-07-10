@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import "../styles/TotalCost.css";
 
 const TotalCost = ({ totalCosts, ItemsDisplay }) => {
-  
+
+  const totalamount = totalCosts.venue + totalCosts.addon + totalCosts.meals
 
   return (
     <div className="pricing-app">
@@ -12,12 +13,12 @@ const TotalCost = ({ totalCosts, ItemsDisplay }) => {
         </div>
         <div>
           <h2 id="pre_fee_cost_display" className="price">
-           
+            {totalamount}
           </h2>
-         
-            <div>
-             
-            </div>
+
+          <div>
+            <ItemsDisplay />
+          </div>
         </div>
       </div>
     </div>
